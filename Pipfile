@@ -8,6 +8,7 @@ flask = "*"
 jsonify = "*"
 gunicorn = "*"
 python-dotenv = "*"
+black = "*"
 
 [dev-packages]
 
@@ -15,4 +16,5 @@ python-dotenv = "*"
 python_version = "3.9"
 
 [scripts]
-serve = "python src/app.py"
+serve = "gunicorn wsgi:app"
+clean = "rm -r __pycache__"
