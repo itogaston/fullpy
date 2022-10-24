@@ -1,15 +1,11 @@
-# app.py
-from flask import Flask, request, jsonify
+import imp
+from multiprocessing.spawn import import_main_path
+from fastapi import FastAPI
+import jsonify 
 
-app = Flask(__name__)
+app = FastAPI()
 
-
-@app.route("/", methods=["POST", "GET"])
+@app.get("/")
 def create_user():
     response = {"message": "success"}
-    return jsonify(response)
-
-
-if __name__ == "__main__":
-    # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000)
+    return response

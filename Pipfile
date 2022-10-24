@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
 jsonify = "*"
 gunicorn = "*"
 python-dotenv = "*"
 black = "*"
+fastapi = "*"
 
 [dev-packages]
 
@@ -16,5 +16,5 @@ black = "*"
 python_version = "3.9"
 
 [scripts]
-serve = "gunicorn wsgi:app"
+serve = "uvicorn src.app:app"
 clean = "rm -r __pycache__"

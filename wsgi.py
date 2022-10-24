@@ -1,4 +1,4 @@
-from src.app import app
+from app2 import app
 
 if __name__ == "__main__":
     app.run(port=5000)
